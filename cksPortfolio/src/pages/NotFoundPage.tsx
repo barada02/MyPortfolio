@@ -53,10 +53,10 @@ const NotFoundPage = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Oops! The page you are looking for does not exist.
-      </NotFoundSubtitle>
+        Oops! The page you are looking for does not exist.      </NotFoundSubtitle>
       
-      <ButtonContainer        initial={{ opacity: 0, y: 20 }}
+      <ButtonContainer
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
