@@ -5,7 +5,7 @@ import Section from '../common/Section';
 import SectionTitle from '../common/SectionTitle';
 import Button from '../common/Button';
 import { staggerContainer, staggerItem } from '../../animations/variants';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 const ProjectsContainer = styled.div`
   display: flex;
@@ -150,12 +150,10 @@ interface Project {
   image: string;
   tags: string[];
   github?: string;
-  demo?: string;
   isFeatured?: boolean;
 }
 
-const ProjectsSection = () => {
-  // Project data
+const ProjectsSection = () => {  // Project data
   const projects: Project[] = [
     {
       id: 1,
@@ -164,7 +162,6 @@ const ProjectsSection = () => {
       image: "https://via.placeholder.com/800x600",
       tags: ["Flutter", "Gemini API", "Firebase"],
       github: "https://github.com",
-      demo: "https://project-demo.com",
       isFeatured: true
     },
     {
@@ -173,8 +170,7 @@ const ProjectsSection = () => {
       description: "A RAG application using Snowflake Cortex search with Mistral LLM, helping biologists explore research papers and extract insights.",
       image: "https://via.placeholder.com/800x600",
       tags: ["Streamlit", "Mistral LLM", "Snowflake"],
-      github: "https://github.com",
-      demo: "https://phytosence-demo.com"
+      github: "https://github.com"
     },
     {
       id: 3,
@@ -182,10 +178,8 @@ const ProjectsSection = () => {
       description: "A business analysis platform powered by Perplexity Sonar API (sonar-deep-research model) for comprehensive data insights.",
       image: "https://via.placeholder.com/800x600",
       tags: ["React", "FastAPI", "Perplexity Sonar"],
-      github: "https://github.com",
-      demo: "https://sonarbi-demo.com"
-    },
-    {
+      github: "https://github.com"
+    },    {
       id: 4,
       title: "Leave Management System",
       description: "A comprehensive system for managing employee leave requests and approvals with user authentication and role-based access control.",
@@ -199,8 +193,7 @@ const ProjectsSection = () => {
       description: "A web application that generates images based on text prompts using deep learning models.",
       image: "https://via.placeholder.com/800x600",
       tags: ["React", "TensorFlow.js", "Node.js"],
-      github: "https://github.com",
-      demo: "https://ai-image-demo.com"
+      github: "https://github.com"
     }
   ];
   
@@ -234,8 +227,7 @@ const ProjectsSection = () => {
                 {featuredProject.tags.map((tag, index) => (
                   <ProjectTag key={index}>{tag}</ProjectTag>
                 ))}
-              </ProjectTags>
-              <ProjectLinks>
+              </ProjectTags>              <ProjectLinks>
                 {featuredProject.github && (
                   <Button 
                     as="a" 
@@ -245,16 +237,6 @@ const ProjectsSection = () => {
                     outlined
                   >
                     <FaGithub style={{ marginRight: '8px' }} /> Code
-                  </Button>
-                )}
-                {featuredProject.demo && (
-                  <Button 
-                    as="a" 
-                    href={featuredProject.demo} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <FaExternalLinkAlt style={{ marginRight: '8px' }} /> Live Demo
                   </Button>
                 )}
               </ProjectLinks>
@@ -284,8 +266,7 @@ const ProjectsSection = () => {
                   {project.tags.map((tag, index) => (
                     <ProjectTag key={index}>{tag}</ProjectTag>
                   ))}
-                </ProjectTags>
-                <ProjectLinks>
+                </ProjectTags>                <ProjectLinks>
                   {project.github && (
                     <Button 
                       as="a" 
@@ -296,17 +277,6 @@ const ProjectsSection = () => {
                       primary={false}
                     >
                       <FaGithub style={{ marginRight: '8px' }} /> Code
-                    </Button>
-                  )}
-                  {project.demo && (
-                    <Button 
-                      as="a" 
-                      href={project.demo} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      primary={false}
-                    >
-                      <FaExternalLinkAlt style={{ marginRight: '8px' }} /> Demo
                     </Button>
                   )}
                 </ProjectLinks>
